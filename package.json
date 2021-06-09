@@ -20,24 +20,13 @@
     "scripts": {
         "build": "microbundle",
         "watch": "microbundle watch",
-        "test": "ava",
-        "lint": "xo src tests",
-        "format": "xo src tests --fix",
-        "prepack": "rm -rf dist && yarn build",
-        "release": "yarn prepack && source .env && np"
+        "test": "ava"
     },
     "devDependencies": {
         "ava": "^3.15.0",
         "esm": "^3.2.25",
         "microbundle": "^0.13.2",
         "np": "^7.5.0",
-        "xo": "^0.36.1"
-    },
-    "xo": {
-        "prettier": true,
-        "space": true,
-        "globals": [],
-        "rules": {}
     },
     "ava": {
         "require": [
