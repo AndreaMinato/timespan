@@ -4,15 +4,59 @@
     "description": "Stop using magic numbers for time related values",
     "author": "Andrea Minato",
     "license": "MIT",
-    "devDependencies": {
-        "microbundle": "^0.13.2"
-    },
+    "source": "src/main.ts",
+    "main": "dist/main.umd.js",
+    "module": "dist/main.modern.module.js",
+    "unpkg": "dist/main.umd.js",
+    "types": "dist/main.d.ts",
+    "keywords": [
+        "microbundle",
+        "typescript"
+    ],
+    "files": [
+        "dist/**.js*",
+        "dist/**/*.ts"
+    ],
     "scripts": {
         "build": "microbundle",
-        "dev": "microbundle watch"
+        "watch": "microbundle watch",
+        "test": "ava",
+        "lint": "xo src tests",
+        "format": "xo src tests --fix",
+        "prepack": "rm -rf dist && yarn build",
+        "release": "yarn prepack && source .env && np"
     },
-    "source": "src/index.ts",
-    "main": "dist/index.umd.js",
-    "module": "dist/index.modern.module.js",
-    "types": "dist/index.d.ts"
+    "devDependencies": {
+        "ava": "^3.15.0",
+        "esm": "^3.2.25",
+        "microbundle": "^0.13.2",
+        "np": "^7.5.0",
+        "xo": "^0.36.1"
+    },
+    "xo": {
+        "prettier": true,
+        "space": true,
+        "globals": [],
+        "rules": {}
+    },
+    "ava": {
+        "require": [
+            "esm"
+        ]
+    },
+    "dependencies": {},
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org"
+    },
+    "directories": {
+        "test": "tests"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/AndreaMinato/timespan.git"
+    },
+    "bugs": {
+        "url": "https://github.com/AndreaMinato/timespan/issues"
+    },
+    "homepage": "https://github.com/AndreaMinato/timespan#readme"
 }

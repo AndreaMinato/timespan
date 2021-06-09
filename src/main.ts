@@ -4,7 +4,7 @@ const msecPerHour = 1000 * 60 * 60;
 const msecPerDay = 1000 * 60 * 60 * 24;
 
 
-export default class TimeSpan {
+export class TimeSpan {
     _milliseconds: number = 0;
 
     constructor(milliseconds: number) {
@@ -131,5 +131,6 @@ TimeSpan.prototype.toString = function () {
     const seconds = Math.floor(remaining / msecPerSecond)
     remaining = remaining % msecPerSecond
     const milliseconds = remaining
-    return `${days}.${formatter.format(hours)}:${formatter.format(minutes)}:${formatter.format(seconds)}.${milliseconds}`;
+    const msFormatter = new Intl.NumberFormat(undefined, { minimumIntegerDigits: 3 })
+    return `${days}.${formatter.format(hours)}:${formatter.format(minutes)}:${formatter.format(seconds)}.${msFormatter.format(milliseconds)}`;
 }
