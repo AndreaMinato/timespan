@@ -1,5 +1,5 @@
 {
-    "name": "@aminato/timespan",
+    "name": "@aminato/timespan.js",
     "version": "0.0.1",
     "description": "Stop using magic numbers for time related values",
     "author": "Andrea Minato",
@@ -11,11 +11,8 @@
         "build": "microbundle",
         "dev": "microbundle watch"
     },
-    "type": "module",
     "source": "src/index.ts",
-    "exports": "./dist/timespan.modern.js",
-    "main": "./dist/timespan.cjs",
-    "module": "./dist/timespan.module.js",
-    "unpkg": "./dist/timespan.umd.js",
-    "types": "dist/timespan.d.ts"
+    "main": "dist/index.umd.js",
+    "module": "dist/index.modern.module.js",
+    "types": "dist/index.d.ts"
 }
